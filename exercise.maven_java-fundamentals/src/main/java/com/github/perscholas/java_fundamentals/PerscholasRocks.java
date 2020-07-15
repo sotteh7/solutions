@@ -5,6 +5,6 @@ package com.github.perscholas.java_fundamentals;
  */
 public class PerscholasRocks {
     public static void main(String[] args) {
-//         System.out.println("Perscholas Rocks!");
+         System.out.println("Perscholas Rocks!");
     }
 }

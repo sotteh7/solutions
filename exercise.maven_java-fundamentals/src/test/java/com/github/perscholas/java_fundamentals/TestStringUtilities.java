@@ -53,7 +53,7 @@ public class TestStringUtilities {
     }
 
     @Test
-    public void substringBeginTest(){
+    public void getPrefixTest(){
         // : Given
         String input = "Hello";
         String expected = "Hel";
@@ -66,7 +66,7 @@ public class TestStringUtilities {
     }
 
     @Test
-    public void substringEndTest(){
+    public void getSuffixTest(){
         // : Given
         String input = "Hello";
         String expected = "llo";
