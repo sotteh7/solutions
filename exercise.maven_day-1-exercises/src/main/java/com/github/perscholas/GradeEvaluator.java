@@ -33,7 +33,7 @@ public class GradeEvaluator {
     }
 
     public Boolean isGradeF(Double score) {
-        return score < 64;
+        return score <= 64;
     }
 
     public Character getGrade(Double score) {
@@ -45,8 +45,10 @@ public class GradeEvaluator {
             return 'C';
         } else if (isGradeD(score)) {
             return 'D';
-        } else {
+        } else if(isGradeF(score)){
             return 'F';
+        } else {
+            return null;
         }
     }
 }
