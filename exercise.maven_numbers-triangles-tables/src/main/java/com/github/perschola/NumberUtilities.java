@@ -16,21 +16,34 @@ public class NumberUtilities {
         return null;
     }
 
-    public static String getRange(int start) {
-        return null;
+    public static String getRange(int stop) {
+        String result =  getRange(0, stop);
+        return result;
     }
 
     public static String getRange(int start, int stop) {
-        return null;
+        String result = "";
+        for(int i=start; i<stop; i+=1) {
+            result += i;
+        }
+        return result;
     }
 
 
     public static String getRange(int start, int stop, int step) {
-        return null;
+        String result = "";
+        for(int i=start; i<stop; i+=step) {
+            result += i;
+        }
+        return result;
     }
 
 
     public static String getExponentiations(int start, int stop, int step, int exponent) {
-        return null;
+        String result = "";
+        for(int i=start; i<stop; i++) {
+            result += i;
+        }
+        return result;
     }
 }
