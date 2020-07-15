@@ -3,11 +3,11 @@
     * Control Flow
 * **Description**
     * Write a program that returns a student's letter grade given a specific `score`.
-        * If a grade is between `100` and `90`, return `A`
-        * If a grade is between `89` and `80`, return `B`
-        * If a grade is between `79` and `70`, return `C`
-        * If a grade is between `69` and `65`, return `D`
-        * If a grade is less than `64`, return `F`.                
+        * If a score is between `100` and `90`, return `A`
+        * If a score is between `89` and `80`, return `B`
+        * If a score is between `79` and `70`, return `C`
+        * If a score is between `69` and `65`, return `D`
+        * If a score is less than `64`, return `F`.                
 
 
 ## Objective
