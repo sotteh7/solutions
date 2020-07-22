@@ -15,6 +15,10 @@ public class TestPeople {
         Person person2 = new Person();
         Person person3 = new Person();
 
+        Assert.assertFalse(people.contains(person1));
+        Assert.assertFalse(people.contains(person2));
+        Assert.assertFalse(people.contains(person3));
+
         // when
         people.add(person1);
         people.add(person2);
