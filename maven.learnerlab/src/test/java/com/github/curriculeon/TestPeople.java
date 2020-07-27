@@ -12,22 +12,14 @@ public class TestPeople {
         // given
         People people = new People();
         Person person1 = new Person();
-        Person person2 = new Person();
-        Person person3 = new Person();
 
         Assert.assertFalse(people.contains(person1));
-        Assert.assertFalse(people.contains(person2));
-        Assert.assertFalse(people.contains(person3));
 
         // when
         people.add(person1);
-        people.add(person2);
-        people.add(person3);
 
         // then
         Assert.assertTrue(people.contains(person1));
-        Assert.assertTrue(people.contains(person2));
-        Assert.assertTrue(people.contains(person3));
     }
 
     @Test
