@@ -13,19 +13,17 @@ public enum Classroom {
 
 
     public void hostLecture(Teacher teacher, Double numberOfHours) {
-        teacher.lecture((Learner[])students.toArray(), numberOfHours);
+        teacher.lecture(students.toArray(), numberOfHours);
     }
 
     public void hostLecture(long id, double numberOfHours) {
-        Person person = instructors.findById(id);
-        Instructor instructor = (Instructor)person;
-        instructor.lecture((Learner[])students.toArray(), numberOfHours);
+        Teacher instructor = instructors.findById(id);
+        instructor.lecture(students.toArray(), numberOfHours);
     }
 
     public Map<Student, Double> getStudyMap() {
         Map<Student, Double> result = new HashMap<>();
-        for(Person studentAsPerson : students.toArray()) {
-            Student student = (Student)studentAsPerson;
+        for(Student student : students.toArray()) {
             Double studyTime = student.getTotalStudyTime();
             result.put(student, studyTime);
         }

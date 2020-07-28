@@ -1,29 +1,30 @@
 package com.github.curriculeon;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * Created by leon on 7/22/2020.
  */
-public class People {
-    List<Person> personList;
+abstract public class People<SomeLearnerType extends Person> implements Iterable<SomeLearnerType> {
+    List<SomeLearnerType> personList;
 
     public People() {
         this(new ArrayList<>());
     }
 
-    public People(List<Person> personList) {
+    public People(List<SomeLearnerType> personList) {
         this.personList = personList;
     }
 
-    public void add(Person person) {
+    public void add(SomeLearnerType person) {
         this.personList.add(person);
     }
 
-    public Person findById(long id) {
+    public SomeLearnerType findById(long id) {
         for (int i = 0; i < personList.size(); i++) {
-            Person person = personList.get(i);
+            SomeLearnerType person = personList.get(i);
             if (person.getId() == id) { //if the id is correct,
                 return person; // return person
             } else { // if its the wrong id,
@@ -33,9 +34,9 @@ public class People {
         return null; // we were not able to find the person with the id
     }
 
-    public Person findByIdExpanded(long id) {
+    public SomeLearnerType findByIdExpanded(long id) {
         for (int i = 0; i < personList.size(); i++) {
-             Person person = personList.get(i);
+            SomeLearnerType person = personList.get(i);
             if (person.getId() == id) { //if the id is correct,
                 return person; // return person
             } else { // if its the wrong id,
@@ -45,11 +46,11 @@ public class People {
         return null; // we were not able to find the person with the id
     }
 
-    public Boolean contains(Person specifiedPerson) {
+    public Boolean contains(SomeLearnerType specifiedPerson) {
         return personList.contains(specifiedPerson);
     }
 
-    public void remove(Person someSpecificPerson) {
+    public void remove(SomeLearnerType someSpecificPerson) {
         personList.remove(someSpecificPerson);
     }
 
@@ -61,10 +62,10 @@ public class People {
         return personList.size();
     }
 
-    public Person[] toArray() {
-        int arrayLength = personList.size();
-        Person[] newArray = new Person[arrayLength];
-        return personList.toArray(newArray);
-    }
+    abstract public SomeLearnerType[] toArray();
 
+    @Override
+    public Iterator<SomeLearnerType> iterator() {
+        return personList.iterator();
+    }
 }

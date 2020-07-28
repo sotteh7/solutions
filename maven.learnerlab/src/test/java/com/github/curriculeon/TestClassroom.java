@@ -14,7 +14,7 @@ public class TestClassroom {
     public void testHostLecture() {
         // given
         Classroom classroom = Classroom.INSTANCE;
-        Teacher teacher = (Teacher)Instructors.getInstance().findById(0L);
+        Teacher teacher = Instructors.getInstance().findById(0L);
         Integer numberOfStudents = Students.getInstance().count();
         Double numberOfHoursToLecture = numberOfStudents.doubleValue();
         Double expectedNumberOfHoursLearned = numberOfHoursToLecture / numberOfStudents;

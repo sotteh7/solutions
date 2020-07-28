@@ -14,7 +14,7 @@ public class TestInstructors {
     public void test() {
         Instructors instructors = Instructors.getInstance();
         List<String> expectedNames = Arrays.asList("Leon Hunter", "Haseeb Muhammad");
-        for(Person instructor : instructors.toArray()) {
+        for(Instructor instructor : instructors) {
             Assert.assertTrue(expectedNames.contains(instructor.getName()));
         }
     }
