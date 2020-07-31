@@ -7,24 +7,24 @@ import java.util.List;
 /**
  * Created by leon on 7/22/2020.
  */
-abstract public class People<SomeLearnerType extends Person> implements Iterable<SomeLearnerType> {
-    List<SomeLearnerType> personList;
+abstract public class People<SomePersonType extends Person> implements Iterable<SomePersonType> {
+    List<SomePersonType> personList;
 
     public People() {
         this(new ArrayList<>());
     }
 
-    public People(List<SomeLearnerType> personList) {
+    public People(List<SomePersonType> personList) {
         this.personList = personList;
     }
 
-    public void add(SomeLearnerType person) {
+    public void add(SomePersonType person) {
         this.personList.add(person);
     }
 
-    public SomeLearnerType findById(long id) {
+    public SomePersonType findById(long id) {
         for (int i = 0; i < personList.size(); i++) {
-            SomeLearnerType person = personList.get(i);
+            SomePersonType person = personList.get(i);
             if (person.getId() == id) { //if the id is correct,
                 return person; // return person
             } else { // if its the wrong id,
@@ -34,9 +34,9 @@ abstract public class People<SomeLearnerType extends Person> implements Iterable
         return null; // we were not able to find the person with the id
     }
 
-    public SomeLearnerType findByIdExpanded(long id) {
+    public SomePersonType findByIdExpanded(long id) {
         for (int i = 0; i < personList.size(); i++) {
-            SomeLearnerType person = personList.get(i);
+            SomePersonType person = personList.get(i);
             if (person.getId() == id) { //if the id is correct,
                 return person; // return person
             } else { // if its the wrong id,
@@ -46,11 +46,11 @@ abstract public class People<SomeLearnerType extends Person> implements Iterable
         return null; // we were not able to find the person with the id
     }
 
-    public Boolean contains(SomeLearnerType specifiedPerson) {
+    public Boolean contains(SomePersonType specifiedPerson) {
         return personList.contains(specifiedPerson);
     }
 
-    public void remove(SomeLearnerType someSpecificPerson) {
+    public void remove(SomePersonType someSpecificPerson) {
         personList.remove(someSpecificPerson);
     }
 
@@ -62,10 +62,10 @@ abstract public class People<SomeLearnerType extends Person> implements Iterable
         return personList.size();
     }
 
-    abstract public SomeLearnerType[] toArray();
+    abstract public SomePersonType[] toArray();
 
     @Override
-    public Iterator<SomeLearnerType> iterator() {
+    public Iterator<SomePersonType> iterator() {
         return personList.iterator();
     }
 }
