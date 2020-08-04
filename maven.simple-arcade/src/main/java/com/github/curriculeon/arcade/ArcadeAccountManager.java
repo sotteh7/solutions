@@ -1,6 +1,5 @@
 package com.github.curriculeon.arcade;
 
-import com.github.curriculeon.Arcade;
 import com.github.curriculeon.utils.AnsiColor;
 import com.github.curriculeon.utils.IOConsole;
 
